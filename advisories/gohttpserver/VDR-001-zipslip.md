@@ -3,7 +3,7 @@
 - **Target**: [codeskyblue/gohttpserver](https://github.com/codeskyblue/gohttpserver)
 - **Severity**: Critical (CVSS 3.1: 9.1)
 - **CWE**: [CWE-22](https://cwe.mitre.org/data/definitions/22.html) - Path Traversal
-- **CVE**: Pending
+- **CVE**: [CVE-2026-38600](https://www.cve.org/CVERecord?id=CVE-2026-38600)
 - **Discovered**: 2026-03-19
 - **Researcher**: Dennis Sepede - [Securitix Solutions](https://securitixsolutions.com)
 
@@ -18,9 +18,12 @@ This directly leads to Remote Code Execution by overwriting system-level files s
 | Date | Event |
 |------|-------|
 | 2026-03-19 | Vulnerability discovered and confirmed with working PoC |
-| 2026-03-19 | Report submitted via GitHub Security Advisory |
-| TBD | Maintainer acknowledgment |
-| TBD | Fix released |
+| 2026-03-19 | Report submitted via GitHub issue requesting Private Vulnerability Reporting |
+| 2026-03-19 | Maintainer notified via direct email |
+| 2026-04-13 | Public technical disclosure on issue #232 (no maintainer response) |
+| 2026-04-14 | CVE-2026-38600 assigned by MITRE |
+| 2026-04-13 | Community fix in fork: [abesnier/gohttpserver PR #233](https://github.com/codeskyblue/gohttpserver/pull/233) |
+| - | Upstream maintainer: no response, project unmaintained |
 
 ## Details
 
