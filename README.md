@@ -1,6 +1,29 @@
 # Security Research
 
-Vulnerability research and responsible disclosures by **Dennis Sepede** - [Securitix Solutions](https://securitixsolutions.com).
+> **Defense is built by those who know how to attack.**
+
+Vulnerability research and coordinated disclosures by **Dennis Sepede** - Co-Founder &amp; CTO of [Securitix Solutions](https://securitixsolutions.com). Every finding comes from **manual source-code review** and a **working proof-of-concept**, disclosed under a 90-day coordinated policy - with a growing focus on AI/LLM security.
+
+![Critical CVEs](https://img.shields.io/badge/Critical_CVEs-3-c0392b?style=flat-square)
+&nbsp;![Published advisories](https://img.shields.io/badge/Published_advisories-10-6d28d9?style=flat-square)
+&nbsp;![Pending at MITRE](https://img.shields.io/badge/Pending_at_MITRE-4-e67e22?style=flat-square)
+&nbsp;![Targets](https://img.shields.io/badge/Targets_%26_programs-40%2B-0b0a0f?style=flat-square)
+
+## Assigned CVEs
+
+| CVE | Target | Vulnerability | Severity |
+|-----|--------|--------------|----------|
+| [CVE-2026-38595](https://www.cve.org/CVERecord?id=CVE-2026-38595) | im3x/Scriptables | OS Command Injection via filename | **Critical 9.8** |
+| [CVE-2026-38600](https://www.cve.org/CVERecord?id=CVE-2026-38600) | gohttpserver | Zip Slip - arbitrary file write &rarr; RCE | **Critical 9.1** |
+| [CVE-2026-38601](https://www.cve.org/CVERecord?id=CVE-2026-38601) | gohttpserver | Hardcoded session secret - auth bypass | **Critical 9.1** |
+
+## 6 libraries, one leak
+
+A single bug class - **custom authentication headers leaking across cross-origin redirects** ([CWE-200](https://cwe.mitre.org/data/definitions/200.html)) - surfaced through manual review across **six** widely-used HTTP client libraries. These clients strip `Authorization`, `Cookie`, `Proxy-Authorization` and `Host` on redirect, but forward custom auth headers (`X-API-Key`, `X-Auth-Token`, `Api-Key`, ...) verbatim to the redirect target, leaking credentials to attacker-controlled hosts.
+
+`undici` &middot; `node-fetch` &middot; `follow-redirects` &middot; `parnurzeal/gorequest` &middot; `imroc/req` &middot; `go-resty/resty`
+
+Outcomes span the full spectrum of real-world disclosure: a coordinated [GHSA for follow-redirects](https://github.com/follow-redirects/follow-redirects/security/advisories/GHSA-r4q5-vmmm-2653), an upstream fix in [go-resty PR #1136](https://github.com/go-resty/resty/pull/1136), and spec-compliance pushback from others - each documented per advisory below.
 
 ## Advisories
 
@@ -41,5 +64,6 @@ All vulnerabilities are discovered through manual source code review and confirm
 
 ## Contact
 
-- **Website**: [securitixsolutions.com](https://securitixsolutions.com)
+- **Website**: [dennis.d-enterprise.cc](https://dennis.d-enterprise.cc) &middot; [securitixsolutions.com](https://securitixsolutions.com)
+- **LinkedIn**: [dennis-sepede-cybersecurity](https://linkedin.com/in/dennis-sepede-cybersecurity)
 - **GitHub**: [@Den-Sec](https://github.com/Den-Sec)
