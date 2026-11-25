@@ -79,6 +79,10 @@ All vulnerabilities are discovered through manual source code review and confirm
 - Public disclosure occurs after the fix is released or after the 90-day deadline
 - Proof-of-concept code is minimal and non-weaponized
 
+## License
+
+Advisories and proof-of-concept code in this repository are released under the [MIT License](LICENSE).
+
 ## Contact
 
 - **Website**: [dennissepede.com](https://dennissepede.com) &middot; [securitixsolutions.com](https://securitixsolutions.com)
